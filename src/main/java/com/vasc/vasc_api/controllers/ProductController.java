@@ -1,5 +1,6 @@
 package com.vasc.vasc_api.controllers;
 
+import com.vasc.vasc_api.entities.Cart;
 import com.vasc.vasc_api.entities.Product;
 import com.vasc.vasc_api.repositories.ProductRepository;
 import com.vasc.vasc_api.services.ProductService;
@@ -10,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
@@ -45,6 +47,7 @@ public class ProductController {
 
         return ResponseEntity.ok(this.productService.getProductById(id));
     }
+
 
     //update products
     @PutMapping("/update/{id}")

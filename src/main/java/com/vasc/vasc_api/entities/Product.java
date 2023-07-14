@@ -1,5 +1,6 @@
 package com.vasc.vasc_api.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +15,7 @@ public class Product {
     private Integer price;
     private String imageName;
 
+
     public Product(){}
     public Product(Integer id, String title, String description, Integer price,String imageName) {
         this.id = id;
@@ -21,6 +23,7 @@ public class Product {
         this.description = description;
         this.price = price;
         this.imageName = imageName;
+
     }
 
     public Integer getId() {
@@ -62,4 +65,5 @@ public class Product {
     public void setImageName(String imageName) {
         this.imageName = imageName;
     }
+
 }
