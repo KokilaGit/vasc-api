@@ -1,0 +1,45 @@
+
+.card img{
+    width:286px;
+    height: 200px;
+}
+.card{
+    margin: 5px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.service-container{
+    display:flex;
+    flex-direction: row;
+    
+}
+#service{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+#cart{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* justify-content: center; */
+    margin-right:30px; 
+   padding: 50px;
+   border: green solid 5px;
+}
+#selectedList{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    /* padding-left: 0px; */
+
+    
+}
+.total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
