@@ -1,0 +1,60 @@
+body {
+    background-color:aquamarine; 
+}
+
+.login-box {
+    border: 3px solid #eee;
+    background-color: #fff;
+}
+.login-box input[type=text], .login-box input[type=password], .login-box input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.login-box button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.login-box button:hover {
+    opacity: 0.8;
+}
+.login-box .cancel {
+    background-color: #f44336;
+    padding: 10px 18px;
+    width: auto;
+}
+.login-box .image-container {
+    margin: 24px 0 12px 0;
+    text-align: center;
+}
+.login-box .avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+.login-container {
+    padding: 16px;
+}
+.login-box .forgot {
+    float: right;
+    padding-top: 16px;
+}
+@media screen and (max-width: 300px) {
+    .forgot {
+       display: block;
+       float: none;
+    }
+    .cancel {
+       width: 100%;
+    }
+}
+
+   
+
