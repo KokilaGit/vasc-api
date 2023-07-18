@@ -1,20 +1,47 @@
-const userController = new UserController
+
 const userForm = document.getElementById('userform')
 
-userForm.addEventListener("submit", function(event){
-    event.preventDefault()
-    const firstName = document.getElementById('firstname').value
+const goToLogin = () => {
+window.location.href = "../Login/login.html";
+}
 
-    const lastName = document.getElementById('lastname').value
+userForm.addEventListener("submit", async function(event){
+    event.preventDefault();
 
-    const email = document.getElementById('email').value
+    const firstName = document.getElementById('firstname').value;
 
-    const password = document.getElementById('password').value
+        const lastName = document.getElementById('lastname').value;
 
-userController.addUser(firstName, lastName, email, password)
+        const email = document.getElementById('email').value;
 
-userController.setLocalStorage()
+        const password = document.getElementById('password').value;
 
-userForm.reset()
+    let userPayload = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    password: password}
+
+
+
+let response = await fetch("/api/user/add", {
+method: "POST",
+headers: {"Content-Type": "application/json"},
+body: JSON.stringify(userPayload),
+});
+
+const responseStatus = response.ok;
+if (responseStatus){
+let addedUser = await response.json();
+goToLogin();
+}
+else{
+alert("Error: Could not add user")
+}
+
+console.log(userPayload);
+userform.reset();
+
+
 
 })
