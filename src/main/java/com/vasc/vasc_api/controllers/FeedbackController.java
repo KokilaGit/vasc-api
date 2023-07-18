@@ -12,7 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
 @RestController
-@RequestMapping("/feedbacks")
+@RequestMapping("/api/feedbacks")
 
 public class FeedbackController {
 
