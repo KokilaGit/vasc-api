@@ -11,14 +11,12 @@ async function getProducts() {
     alert("Error: Could not add product");
   }
 }
-
 //cartFunction
 async function cartList() {
   let cartListResponse = await fetch("/api/cart/user/1", {
   method: "GET",
   headers: { "Content-Type": "application/json" },
 });
-
 let cartListStatus = cartListResponse.ok;
 if (cartListStatus) {
   let productLists = await cartListResponse.json();
@@ -33,7 +31,6 @@ if (cartListStatus) {
   let total = 0;
   productLists.forEach((productList) => {
     let newRow = document.createElement("tr");
-
     newRow.innerHTML = `
                               <td>${productList.product.title}</td><td></td>
                               <td>$${productList.product.price}</td>`;
@@ -53,8 +50,6 @@ tableBody.appendChild(checkoutRow);
   alert("Error: Could not add product");
 }
 }
-
-
 (async () => {
   let serviceArray = await getProducts();
   console.log(serviceArray);
@@ -95,12 +90,10 @@ tableBody.appendChild(checkoutRow);
             throw "Item already added!";
           }
         });
-
         let cart = {
           product_id: Number(event.target.getAttribute("data-pid")),
           user_id: 1,
         };
-
         let response = await fetch("/api/cart/add", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
