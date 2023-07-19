@@ -5,6 +5,7 @@ import com.vasc.vasc_api.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -69,6 +70,15 @@ public class UserService {
         responseMap.put("userInfo", optionalUser.get());
 
         return responseMap;
+    }
+
+
+    public List<User> getUserByLastName(String lastName){
+        return userRepository.getUserByLastName(lastName);
+    }
+
+    public List<User> getUserByEmail(String email){
+        return userRepository.getUserByEmail(email);
     }
 
 }
