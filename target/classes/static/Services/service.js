@@ -22,9 +22,12 @@ async function cartList() {
 let cartListStatus = cartListResponse.ok;
 if (cartListStatus) {
   let productLists = await cartListResponse.json();
+<<<<<<< HEAD
 //  console.log("hello");
 //  console.log(productLists);
 //  console.log("Product:" + productLists[0].product.title);
+=======
+>>>>>>> d92a12863c7dbbcf1d44449417cec6ba949f46c9
   let cartDisplay = document.getElementById("product-table");
   let deleteBody = document.getElementsByClassName("demoClass")[0];
   if (deleteBody != null) {
@@ -125,4 +128,4 @@ tableBody.appendChild(checkoutRow);
 function myFunc() {
   alert("Your order has been placed")
 }
-window.onload(cartList());
+window.onload = cartList();
