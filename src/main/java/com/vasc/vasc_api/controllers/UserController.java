@@ -10,6 +10,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -63,6 +64,16 @@ public class UserController {
 
         return ResponseEntity.ok(responseMap);
 
+    }
+
+    @GetMapping("/name")
+    public List<User> getUserByLastName(@RequestParam String lastName){
+        return userService.getUserByLastName(lastName);
+    }
+
+    @GetMapping("/email")
+    public List<User> getUserByEmail(@RequestParam String email){
+        return userService.getUserByEmail(email);
     }
 
 }
