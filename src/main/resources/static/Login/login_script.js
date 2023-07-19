@@ -8,7 +8,7 @@ let passwordMatch = false;
 
 
 const goToServices = () =>{
-window.location.href = "../AboutUs/aboutUs.html";
+window.location.href = "../Services/service.html";
 }
 
 
